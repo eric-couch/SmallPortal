@@ -69,7 +69,9 @@ namespace SmallPortal.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-
+            [Required]
+            [Display(Name = "Business Name")]
+            public string BusinessName { get; set; }
             [Required]
             [Display(Name = "First Name")]
             public string FirstName { get; set; }
@@ -141,7 +143,8 @@ namespace SmallPortal.Areas.Identity.Pages.Account
 
                     var CreateContactBody = new IntuitCreateContactBody
                     {
-                        metadata = (new Metadata { id = "payer1" }),
+                        //metadata = (new Metadata { id = "payer1" }),
+                        businessName = Input.BusinessName,
                         firstName = Input.FirstName,
                         lastName = Input.LastName,
                         streetAddress = Input.StreetAddress,
@@ -179,7 +182,8 @@ namespace SmallPortal.Areas.Identity.Pages.Account
 
                 }
 
-                var user = new ApplicationUser {    UserName = Input.Email, 
+                var user = new ApplicationUser {    BusinessName = Input.BusinessName,
+                                                    UserName = Input.Email, 
                                                     Email = Input.Email, 
                                                     FirstName = Input.FirstName, 
                                                     LastName = Input.LastName, 

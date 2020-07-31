@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace SmallPortal.Models
 {
-    public class IntuitCreateContactBody
+    [NotMapped]
+    public class Recipient
     {
-        //public Metadata metadata { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int Id { get; set; }
         public string businessName { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
         public string streetAddress { get; set; }
         public string city { get; set; }
         public string state { get; set; }
@@ -19,5 +20,4 @@ namespace SmallPortal.Models
         public string email { get; set; }
         public string tin { get; set; }
     }
-
 }

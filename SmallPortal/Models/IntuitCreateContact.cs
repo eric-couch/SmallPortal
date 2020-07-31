@@ -10,7 +10,8 @@ namespace SmallPortal.Models
         public string id { get; set; }
         public long createdDate { get; set; }
         public long updatedDate { get; set; }
-        public Metadata metadata { get; set; }
+        //public Metadata metadata { get; set; }
+        public string businessName { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string phone { get; set; }
